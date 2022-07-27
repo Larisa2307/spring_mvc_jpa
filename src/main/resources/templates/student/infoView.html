@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	id-ul este:  {{id}}
+
+<!--
+	{{#obj}}
+	{{/obj}}
+	este folosita cu urmatoarele usecase--uri:
+		- daca obj e boolean :  se comporta ca un if
+		- daca obj e un obiect (student) :  se comporta ca  student!=null
+		- daca obj e o lista :  se comporta ca un foreach
+-->
+
+	{{#student}}
+	<div>Studentul este: {{student.name}} si are varsta {{student.age}}</div>
+	{{/student}}
+
+	{{>fragments/footer}}
+
+</body>
+</html>

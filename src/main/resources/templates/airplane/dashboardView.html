@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+Aici sunt in airplane dashboard view
+
+{{#airplane6}}
+<p>
+	deltaii avion: {{id}} - {{name}} - {{age}}   <a href="/myapp/airplane/info/{{id}}">Detalii</a>
+</p>
+{{/airplane6}}
+
+<div>------------------------------------------------------------</div>
+
+{{#airplane7}}
+<p>
+	deltaii avion: {{id}} - {{name}} - {{age}}   <a href="/myapp/airplane/info/{{id}}">Detalii</a>
+</p>
+{{/airplane7}}
+<!--
+
+		action  -> controllerul in care se vor duce info
+		cum stie sa trimita un Airplane airplane?   punem pe form  name="airplane"
+
+		la submit se compune obiectul airplane cu urmatoarele proprietati:
+				-name:  ce bag in input (blue air)
+				-age:  ce bag in input (100)
+
+-->
+
+<!--
+	la capatul requestului stie ca il asteapta un Airplane airplane -> id, name, age
+	airplane
+		name = "aaa"
+		age = 2222;
+-->
+<form action="/myapp/airplane/add" method="post" name="airplane">
+	<fieldset>
+		<legend>Personal info</legend>
+
+		Name: <input type="text" name="name" />
+		<br><br>
+		Age: <input type="number" name="age" />
+		<br><br>
+		<button type="submit">Save</button>
+	</fieldset>
+
+</form>
+
+
+
+{{>fragments/footer}}
+
+</body>
+</html>
